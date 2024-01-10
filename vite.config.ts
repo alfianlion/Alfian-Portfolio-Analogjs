@@ -12,7 +12,11 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     mainFields: ['module'],
   },
-  plugins: [analog()],
+  plugins: [
+    analog({
+      // apiPrefix: 'services',
+    }),
+  ],
   test: {
     globals: true,
     environment: 'jsdom',
