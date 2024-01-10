@@ -14,6 +14,9 @@ dependencies:
   '@angular/animations':
     specifier: ^17.0.0
     version: 17.0.8(@angular/core@17.0.8)
+  '@angular/cdk':
+    specifier: 17.0.0
+    version: 17.0.0(@angular/common@17.0.8)(@angular/core@17.0.8)(rxjs@7.5.7)
   '@angular/common':
     specifier: ^17.0.0
     version: 17.0.8(@angular/core@17.0.8)(rxjs@7.5.7)
@@ -41,6 +44,15 @@ dependencies:
   '@nx/angular':
     specifier: ~17.1.0
     version: 17.1.3(@angular-devkit/build-angular@17.0.9)(@angular-devkit/core@17.0.9)(@angular-devkit/schematics@17.0.9)(@schematics/angular@17.0.9)(@types/node@20.10.7)(eslint@8.56.0)(nx@17.1.3)(rxjs@7.5.7)(typescript@5.2.2)
+  '@spartan-ng/ui-progress-brain':
+    specifier: 0.0.1-alpha.320
+    version: 0.0.1-alpha.320(@angular/cdk@17.0.0)(@angular/core@17.0.8)
+  class-variance-authority:
+    specifier: ^0.6.0
+    version: 0.6.1
+  clsx:
+    specifier: ^1.2.1
+    version: 1.2.1
   front-matter:
     specifier: ^4.0.2
     version: 4.0.2
@@ -100,9 +112,15 @@ devDependencies:
   postcss:
     specifier: ^8.4.21
     version: 8.4.33
+  tailwind-merge:
+    specifier: ^1.14.0
+    version: 1.14.0
   tailwindcss:
     specifier: ^3.3.1
     version: 3.4.1
+  tailwindcss-animate:
+    specifier: ^1.0.6
+    version: 1.0.7(tailwindcss@3.4.1)
   typescript:
     specifier: ~5.2.0
     version: 5.2.2
@@ -431,6 +449,21 @@ packages:
     dependencies:
       '@angular/core': 17.0.8(rxjs@7.5.7)(zone.js@0.14.2)
       tslib: 2.6.2
+
+  /@angular/cdk@17.0.0(@angular/common@17.0.8)(@angular/core@17.0.8)(rxjs@7.5.7):
+    resolution: {integrity: sha512-8F1z0YhDjKWqB29+AUh33OKr2Ts5PVUUogVXEVmmPipPDtj82iIQLbtBnR6xpWvmsw9mS3oD76EwBoUhHQgi6g==}
+    peerDependencies:
+      '@angular/common': ^17.0.0 || ^18.0.0
+      '@angular/core': ^17.0.0 || ^18.0.0
+      rxjs: ^6.5.3 || ^7.4.0
+    dependencies:
+      '@angular/common': 17.0.8(@angular/core@17.0.8)(rxjs@7.5.7)
+      '@angular/core': 17.0.8(rxjs@7.5.7)(zone.js@0.14.2)
+      rxjs: 7.5.7
+      tslib: 2.6.2
+    optionalDependencies:
+      parse5: 7.1.2
+    dev: false
 
   /@angular/cli@17.0.9:
     resolution: {integrity: sha512-a1rLAu3TNU5d56ozBnx9UZchJDKC8qMvZL4ThJhcaTUJb0Cj//gqLJdNdMcB0p1Ve9lmmAQ3J17+2Xij1u3sNg==}
@@ -4831,6 +4864,17 @@ packages:
   /@socket.io/component-emitter@3.1.0:
     resolution: {integrity: sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==}
 
+  /@spartan-ng/ui-progress-brain@0.0.1-alpha.320(@angular/cdk@17.0.0)(@angular/core@17.0.8):
+    resolution: {integrity: sha512-q4SO1fE0kOFucLEdiNs+QqrjFe9HminkjLwQ7ZvvuHheX4oVOmWKqzecuYITLD9g9ksTeWt4JPf04gIoF/pQhQ==}
+    peerDependencies:
+      '@angular/cdk': ^17.0.0
+      '@angular/core': ^17.0.0
+    dependencies:
+      '@angular/cdk': 17.0.0(@angular/common@17.0.8)(@angular/core@17.0.8)(rxjs@7.5.7)
+      '@angular/core': 17.0.8(rxjs@7.5.7)(zone.js@0.14.2)
+      tslib: 2.6.2
+    dev: false
+
   /@swc/helpers@0.5.3:
     resolution: {integrity: sha512-FaruWX6KdudYloq1AHD/4nU+UsMTdNE8CKyrseXWEcgjDAbvkwJg2QGPAnfIJLIWsjZOSPLOAykK6fuYp4vp4A==}
     dependencies:
@@ -6252,6 +6296,12 @@ packages:
     resolution: {integrity: sha512-0TNiGstbQmCFwt4akjjBg5pLRTSyj/PkWQ1ZoO2zntmg9yLqSRxwEa4iCfQLGjqhiqBfOJa7W/E8wfGrTDmlZQ==}
     dev: false
 
+  /class-variance-authority@0.6.1:
+    resolution: {integrity: sha512-eurOEGc7YVx3majOrOb099PNKgO3KnKSApOprXI4BTq6bcfbqbQXPN2u+rPPmIJ2di23bMwhk0SxCCthBmszEQ==}
+    dependencies:
+      clsx: 1.2.1
+    dev: false
+
   /clean-stack@2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
     engines: {node: '>=6'}
@@ -6310,6 +6360,11 @@ packages:
   /clone@1.0.4:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
+
+  /clsx@1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
+    dev: false
 
   /cluster-key-slot@1.1.2:
     resolution: {integrity: sha512-RMr0FhtfXemyinomL4hrWcYJxmX6deFdCxpJzhDttxgO1+bcCnkk+9drydLVDmAMG7NE6aN/fl4F7ucU/90gAA==}
@@ -9260,7 +9315,7 @@ packages:
       jest-util: 29.7.0
       natural-compare: 1.4.0
       pretty-format: 29.7.0
-      semver: 7.5.3
+      semver: 7.5.4
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -9758,7 +9813,7 @@ packages:
     resolution: {integrity: sha512-hXdUTZYIVOt1Ex//jAQi+wTZZpUpwBj/0QsOzqegb3rGMMeJiSEu5xLHnYfBrRV4RH2+OCSOO95Is/7x1WJ4bw==}
     engines: {node: '>=10'}
     dependencies:
-      semver: 7.5.3
+      semver: 7.5.4
     dev: false
 
   /make-error@1.3.6:
@@ -12679,6 +12734,18 @@ packages:
 
   /symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
+    dev: true
+
+  /tailwind-merge@1.14.0:
+    resolution: {integrity: sha512-3mFKyCo/MBcgyOTlrY8T7odzZFx+w+qKSMAmdFzRvqBfLlSigU6TZnlFHK0lkMwj9Bj8OYU+9yW9lmGuS0QEnQ==}
+    dev: true
+
+  /tailwindcss-animate@1.0.7(tailwindcss@3.4.1):
+    resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders'
+    dependencies:
+      tailwindcss: 3.4.1
     dev: true
 
   /tailwindcss@3.4.1:

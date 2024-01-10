@@ -1,30 +1,14 @@
 import { Component } from '@angular/core';
+import { HeaderComponent } from '../components/header/header.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  templateUrl: './index.page.html',
-  styles: [
-    `
-      .logo {
-        will-change: filter;
-      }
-      .logo:hover {
-        filter: drop-shadow(0 0 2em #646cffaa);
-      }
-      .logo.angular:hover {
-        filter: drop-shadow(0 0 2em #42b883aa);
-      }
-      .read-the-docs {
-        color: #888;
-      }
-    `,
+  imports: [
+    HeaderComponent,
   ],
+  templateUrl: './index.page.html',
 })
 export default class HomeComponent {
-  count = 0;
-
-  increment() {
-    this.count++;
-  }
+  value = 1;
 }
